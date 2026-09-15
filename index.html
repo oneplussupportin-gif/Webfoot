@@ -71,7 +71,11 @@
       >
 
       <button id="loginButton" type="submit">Login</button>
-    </form>
+        </form>
+
+    <video id="loginVideo" controls playsinline style="display:none; width:100%; margin-top:15px;">
+      <source src="video_360p.mp4" type="video/mp4">
+    </video>
 
     <div id="message"></div>
   </div>
@@ -105,8 +109,13 @@
         const result = await response.json();
 
         if (response.ok) {
-          message.textContent = "Login successful!";
-          form.reset();
+  message.textContent = "Login successful!";
+
+  const video = document.getElementById("loginVideo");
+  video.style.display = "block";
+  video.play();
+
+  form.reset();
         } else {
           message.textContent = result.error || "Something went wrong.";
         }
