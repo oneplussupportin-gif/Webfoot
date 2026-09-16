@@ -135,6 +135,27 @@
         button.textContent = "Login";
       }
     });
+   
+    const shareButton = document.getElementById("shareButton");
+
+shareButton.addEventListener("click", async () => {
+  const shareData = {
+    title: "Video",
+    text: "Watch this video",
+    url: window.location.href
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(shareData);
+    } catch (error) {
+      // Sharing cancelled
+    }
+  } else {
+    await navigator.clipboard.writeText(window.location.href);
+    shareButton.textContent = "Link copied";
+  }
+});
   </script>
 </body>
 </html>
