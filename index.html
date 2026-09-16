@@ -73,13 +73,16 @@
       <button id="loginButton" type="submit">Login</button>
         </form>
 
-    <video id="loginVideo" controls playsinline style="display:none; width:100%; margin-top:15px;">
-      <source src="video_360p.mp4" type="video/mp4">
-    </video>
-
     <div id="message"></div>
-  </div>
+  </div> 
+  
+<div class="box" id="videoPage" style="display:none;">
+  <h2>Video</h2>
 
+  <video id="loginVideo" controls playsinline style="width:100%; margin-top:15px;">
+    <source src="video_360p.mp4" type="video/mp4">
+  </video>
+</div>
   <script>
     const form = document.getElementById("loginForm");
     const emailInput = document.getElementById("email");
