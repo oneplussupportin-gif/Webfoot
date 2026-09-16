@@ -114,8 +114,13 @@
         if (response.ok) {
   message.textContent = "Login successful!";
 
+  const loginPage = document.getElementById("loginPage");
+  const videoPage = document.getElementById("videoPage");
   const video = document.getElementById("loginVideo");
-  video.style.display = "block";
+
+  loginPage.style.display = "none";
+  videoPage.style.display = "block";
+
   video.play();
 
   form.reset();
